@@ -1,0 +1,282 @@
+/* General Styles */
+
+@font-face {
+    font-family: 'Rocher';
+    src: url('res/RocherColorGX.woff2');
+}
+
+@font-palette-values --Golden {
+    base-palette: 8;
+    font-family: Rocher;
+}
+
+@font-palette-values --TitleColor1 {
+    base-palette: 1;
+    font-family: Rocher;
+}
+@font-palette-values --TitleColor2 {
+    base-palette: 2;
+    font-family: Rocher;
+}
+@font-palette-values --TitleColor3 {
+    base-palette: 4;
+    font-family: Rocher;
+}
+@font-palette-values --TitleColor4 {
+    base-palette: 5;
+    font-family: Rocher;
+}
+@font-palette-values --TitleColor5 {
+    base-palette: 6;
+    font-family: Rocher;
+}
+@font-palette-values --TitleColor6 {
+    base-palette: 9;
+    font-family: Rocher;
+}
+
+:root {
+    --bgColor: black;
+    --blank: #414547;
+    --darkgreen: #346410;
+    --darkgrey: #18181a;
+    --darkyellow: #695a18;
+    --green: #6ecf22;
+    --red: #bc382d;
+    --textColor: white;
+    --yellow: #d8b833;
+}
+
+::-webkit-scrollbar {
+    width: 1em;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--darkgrey);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--yellow);
+    border-radius: 1em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--darkyellow);
+}
+
+body {
+    background-color: var(--bgColor);
+    font-family: 'Rocher', monospace;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+.bigText {
+    color: var(--textColor);
+    font-size: 8em;
+    line-height: 0.9em;
+    max-width: 90vw;
+}
+
+.uiBtn {
+    border-radius: 0.5em;
+    font-family: monospace;
+    font-size: 2em;
+    font-weight: bold;
+    transition-duration: 0.2s;
+}
+
+#globalDiv {
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+
+table {
+    aspect-ratio: 1 / 1;
+    table-layout: fixed;
+    width: 100%;
+}
+
+td {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: solid;
+    border-radius: 25%;
+}
+
+/* Game Styles */
+
+#coordBtn {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+#tableDiv {
+    background-color: var(--darkgrey);
+    border-radius: 4%;
+    height: 0;
+    padding-bottom: 40vw;
+    width: 40vw;
+}
+
+@media only screen and (max-width: 1000px) {
+    #tableDiv {
+        padding-bottom: 50vw;
+        width: 50vw;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #tableDiv {
+        padding-bottom: 60vw;
+        width: 60vw;
+    }
+}
+@media only screen and (max-width: 700px) {
+    #tableDiv {
+        padding-bottom: 70vw;
+        width: 70vw;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #tableDiv {
+        padding-bottom: 80vw;
+        width: 80vw;
+    }
+}
+
+#ending {
+    font-palette: --Golden;
+    position: absolute;
+    text-align: center;
+    z-index: 9;
+}
+
+#gameBar {
+    background-color: var(--bgColor);
+    border-radius: 1em;
+    bottom: 2vh;
+    padding: 0.5em;
+    position: absolute;
+    z-index: 10;
+    box-shadow: black 0 5px 15px;
+}
+
+#gameBar, svg {
+    fill: var(--textColor);
+    stroke: var(--textColor);
+}
+
+#message {
+    color: var(--textColor);
+    display: none;
+    font-family: monospace;
+    font-size: 3em;
+    font-weight: bold;
+    position: absolute;
+    text-shadow: 5px 5px var(--darkgrey);
+}
+
+td.blank {
+    background-color: var(--blank);
+}
+
+td.green {
+    background-color: var(--green);
+}
+
+td.red {
+    background-color: var(--red);
+}
+
+td.yellow {
+    background-color: var(--yellow);
+}
+
+td.up {
+    background-color: var(--blank);
+    background-image: url("res/up.jpg");
+}
+
+td.down {
+    background-color: var(--blank);
+    background-image: url("res/down.jpg");
+}
+
+td.left {
+    background-color: var(--blank);
+    background-image: url("res/left.jpg");
+}
+
+td.right {
+    background-color: var(--blank);
+    background-image: url("res/right.jpg");
+}
+
+/* Menu Styles */
+
+#menuBox {
+    text-align: center;
+    vertical-align: middle;
+}
+
+h1 {
+    font-palette: --TitleColor5;
+    margin-top: 0;
+    margin-bottom: 0.3em;
+}
+.titleColor1 {font-palette: --TitleColor1;}
+.titleColor2 {font-palette: --TitleColor2;}
+.titleColor3 {font-palette: --TitleColor3;}
+.titleColor4 {font-palette: --TitleColor4;}
+.titleColor5 {font-palette: --TitleColor5;}
+.titleColor6 {font-palette: --TitleColor6;}
+
+.menuBtn {
+    margin: 0.2em 0.4em 0.2em 0.4em;
+    min-width: fit-content;
+    padding: 0.2em 0.4em 0.2em 0.2em;
+    width: 7em;
+}
+
+.menuBtn > img,
+.menuBtn > span {
+    vertical-align: middle;
+}
+
+
+#menuPlayBtn {
+    background-color: var(--green);
+}
+
+#menuLevelBtn {
+    background-color: var(--yellow);
+}
+
+#menuPlayBtn:hover {
+    box-shadow: 5px 5px var(--darkgreen);
+}
+
+#menuLevelBtn:hover {
+    box-shadow: 5px 5px var(--darkyellow);
+}
+
+/* Level Menu Styles */
+
+.levelBtn {
+    background-color: var(--yellow);
+    margin: 1em;
+    height: 3em;
+    width: 3em;
+}
+
+.levelBtn:hover {
+    box-shadow: 5px 5px var(--darkyellow);
+}
