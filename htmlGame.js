@@ -68,6 +68,7 @@ function updateGame() {
     tableAnchor.removeChild(tableAnchor.lastChild);
     let htmlTable = generateFieldTable(field);
     tableAnchor.appendChild(htmlTable);
+    console.log(field.toString());
 }
 
 function writeMessage(msg) {
@@ -98,19 +99,20 @@ document.getElementById('shareBtn').addEventListener("click", () => {
 let tableAnchor = document.getElementById("tableDiv");
 let btn = document.getElementById("coordBtn");
 let endText = document.getElementById("ending");
+endText.innerHTML = "";
 let messageBox = document.getElementById("message");
 let possibleMoves;
 let currentCell;
+const urlParams = new URLSearchParams(window.location.search);
+let levelNumber = urlParams.get("l");
 
 /*  Initialize field  */
 
-const urlParams = new URLSearchParams(window.location.search);
-let levelNumber = urlParams.get("l");
 let level = LevelArray[levelNumber];
+// if level doesn't exist change to menu.html
 if (!levelNumber || level === undefined) {
     window.location.replace("./menu.html");
 }
-endText.innerHTML = "";
 
 let field = new Field(...level);
 updateGame();

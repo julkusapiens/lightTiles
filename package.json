@@ -1,0 +1,9 @@
+{
+  "name": "lighttiles",
+  "version": "1.0.0",
+  "description": "fun little game",
+  "main": "menu.html",
+  "author": "Julkosafius",
+  "license": "ISC",
+  "type": "module"
+}
