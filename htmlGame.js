@@ -82,17 +82,21 @@ function writeMessage(msg) {
 
 /* Game Bar */
 
-document.getElementById('homeBtn').addEventListener("click", () => {
+document.getElementById("homeBtn").addEventListener("click", () => {
     window.location.replace("./menu.html");
 });
-document.getElementById('levelBtn').addEventListener("click", () => {
+document.getElementById("levelBtn").addEventListener("click", () => {
     window.location.replace("./levels.html");
 });
-document.getElementById('shareBtn').addEventListener("click", () => {
+document.getElementById("shareBtn").addEventListener("click", () => {
     window.navigator.clipboard.writeText(renderFieldEmojis(field)).then(() => {
         writeMessage("Copied to Clipboard!");
     });
 });
+document.getElementById("clearBtn").addEventListener("click", () => {
+    field = new Field(...level);
+    updateGame();
+})
 
 /* Variable Declaration */
 
