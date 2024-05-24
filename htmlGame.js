@@ -55,11 +55,11 @@ function detectClickedCell(event) {
     let height = field.height;
     let width = field.width;
     let xCoords = Array.from({length: width},
-    (e, i) => table.offsetLeft + ((i+1) * (table.offsetWidth / width)));
+        (e, i) => table.offsetLeft + ((i+1) * (table.offsetWidth / width)));
     let yCoords = Array.from({length: height},
-    (e, i) => table.offsetTop + ((i+1) * (table.offsetHeight / height)));
+        (e, i) => table.offsetTop + ((i+1) * (table.offsetHeight / height)));
     let currentCell = [xCoords.findIndex(e => event.clientX < e),
-    yCoords.findIndex(e => event.clientY < e)];
+        yCoords.findIndex(e => event.clientY < e)];
     if (event.clientX < table.offsetLeft || event.clientY < table.offsetTop) return [-1,-1];
     return currentCell;
 }
@@ -144,7 +144,7 @@ btn.addEventListener("click", event => {
             }
         } else {
             let direction = possibleMoves.findIndex(dir => !dir.length ? undefined :
-                            dir[0][0] === clickedCell[0] && dir[0][1] === clickedCell[1]);
+                dir[0][0] === clickedCell[0] && dir[0][1] === clickedCell[1]);
             let editedCells = possibleMoves.map(e => e[0] || e).filter(e => e.length > 0);
             //console.log(MOVES[direction]);
 
@@ -175,4 +175,3 @@ btn.addEventListener("click", event => {
 
     btn.disabled = false;
 });
-
